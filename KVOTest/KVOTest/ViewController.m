@@ -23,13 +23,12 @@ static NSString *kPropertyThatChanges = @"name";
     // Do any additional setup after loading the view, typically from a nib.
     
     Jack *jack = [[Jack alloc] init];
-    
+    // breakpoint 1
     [jack addObserver:self forKeyPath:kPropertyThatChanges options:NSKeyValueObservingOptionNew context:nil];
-    
-    jack.name = @"jjj";
-    
+    // breakpoint 2
+    jack.name = @"Jack";
     [jack removeObserver:self forKeyPath:kPropertyThatChanges];
-    
+    // breakpoint 3
 }
 
 - (void)didReceiveMemoryWarning {
